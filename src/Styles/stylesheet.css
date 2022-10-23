@@ -60,6 +60,18 @@ html {
     background: #fff;
     border: black;
    }
+   @media only screen and (max-width: 1035px){
+    .single-photo {
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        background: #fff;
+        border: black;
+        align-items: center;
+        justify-content: center;
+       }
+   }
    .single-photo .figure {
     box-shadow: none;
     margin: 0 2rem 0 0;
