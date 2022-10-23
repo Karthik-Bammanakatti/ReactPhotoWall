@@ -14,7 +14,7 @@ function Photo(props) {
 				/>
 			</Link>
 			<figurecaption>
-				<p> {post.description} </p>
+				<p className="caption"> {post.description} </p>
 			</figurecaption>
 			<div className="button-container">
 				<button
