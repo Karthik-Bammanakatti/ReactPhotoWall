@@ -1,35 +1,33 @@
-import  React, {Component} from 'react';
+import React, { Component } from "react";
 
-export default class Comment extends Component{
+export default class Comment extends Component {
+	constructor() {
+		super();
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
 
-    constructor(){
-        super();
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+	handleSubmit(event) {
+		event.preventDefault();
+		const comment = event.target.elements.comment.value;
+		this.props.startAddingComment(comment, this.props.id);
+		event.target.elements.comment.value = "";
+	}
 
-    handleSubmit(event){
-        event.preventDefault();
-        const comment = event.target.elements.comment.value;
-        this.props.addComment(comment, this.props.id);
-        event.target.elements.comment.value = '';
-    }
-
-    render(){
-        return (
-            
-            <div className = "comment">
-            {
-                this.props.comments.map((comment, index) => {
-                    return (
-                        <p key = {index}> {comment} </p>
-                    )
-                })
-            }
-                <form className = "comment-form" onSubmit = {this.handleSubmit}>
-                    <input type = "text" placeholder = "Comment..." name = "comment"/>
-                    <input type = "submit"/>
-                </form>
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div className="comment">
+				{this.props.comments.map((comment, index) => {
+					return <p key={index}> {comment} </p>;
+				})}
+				<form className="comment-form" onSubmit={this.handleSubmit}>
+					<input
+						type="text"
+						placeholder="Comment..."
+						name="comment"
+					/>
+					<input type="submit" />
+				</form>
+			</div>
+		);
+	}
 }
