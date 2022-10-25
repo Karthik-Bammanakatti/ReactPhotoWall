@@ -193,7 +193,33 @@ html {
     font-size: 28pt;
    }
 
-   @media only screen and (max-width: 1035px){
+   @media only screen and (max-width: 1034px){
+    .single-photo {
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        background: #fff;
+        border: black;
+        align-items: center;
+        justify-content: center;
+       }
+       .single-photo .photo {
+        width: 110%;
+        margin-left: auto
+       }
+       .single-photo  .button-container {
+        width: 110%;
+        margin-left: auto
+       }
+
+       .single-photo .caption {
+        margin-left: auto
+       }
+       
+   }
+
+   @media only screen and (max-width: 420px){
     .single-photo {
         flex-direction: column;
         max-width: 1000px;
@@ -218,3 +244,5 @@ html {
        }
        
    }
+
+  
